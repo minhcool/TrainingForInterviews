@@ -17,7 +17,7 @@ public:
         if(c >= '0' && c <= '9') return c - '0';
         return -1;
     }
-    long long getIntAddress(string ip){
+    long long getIntAddress(const string &ip){
         long long curNum = 0, ans = 0;
         for(auto c : ip){
             long long num = getDigit(c);
@@ -61,7 +61,7 @@ public:
         ans += toString(ip & 255);
         return ans;
     }
-    void check(string startIp, string endIp, bool increasing){
+    void check(const string &startIp, const string &endIp, bool increasing){
         if(increasing){
             if(getIntAddress(startIp) > getIntAddress(endIp)){
                 throw runtime_error("Iterator increasing, startIp must be <= endIp");
